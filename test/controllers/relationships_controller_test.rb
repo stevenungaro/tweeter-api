@@ -11,7 +11,7 @@ class RelationshipsControllerTest < ActionDispatch::IntegrationTest
 
   test "create" do
     assert_difference "Relationship.count", 1 do
-      post "/relationships.json", params: { follower_id: 1, leader_id: 1 }
+      post "/relationships.json", params: { follower_id: User.first.id, leader_id: User.second.id }
       assert_response 200
     end
   end

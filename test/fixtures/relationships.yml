@@ -1,9 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  leader_id: 1
-  follower_id: 1
+  leader_id: 10
+  follower_id: 11
 
 two:
-  leader_id: 1
-  follower_id: 1
+  leader_id: 12
+  follower_id: 13
