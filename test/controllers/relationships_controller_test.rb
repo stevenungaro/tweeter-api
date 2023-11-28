@@ -21,7 +21,7 @@ class RelationshipsControllerTest < ActionDispatch::IntegrationTest
     assert_response 200
 
     data = JSON.parse(response.body)
-    assert_equal ["id", "follower_id", "leader_id", "created_at", "updated_at"], data.keys
+    assert_equal ["id", "leader_id", "follower_id", "created_at", "updated_at"], data.keys
   end
 
   test "destroy" do
