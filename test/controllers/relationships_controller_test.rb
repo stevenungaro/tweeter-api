@@ -15,4 +15,19 @@ class RelationshipsControllerTest < ActionDispatch::IntegrationTest
       assert_response 200
     end
   end
+
+  test "show" do
+    get "/relationships/#{Relationship.first.id}.json"
+    assert_response 200
+
+    data = JSON.parse(response.body)
+    assert_equal ["id", "follower_id", "leader_id", "created_at", "updated_at"], data.keys
+  end
+
+  test "destroy" do
+    assert_difference "Relationship.count", -1 do
+      delete "/relationships/#{Relationship.first.id}.json"
+      assert_response 200
+    end
+  end
 end
